@@ -8,4 +8,6 @@ language: node_js
 script:
   - echo 'hello with docker'
   - docker info
-  - docker build -t image_to_deploy .
+  - docker build -t szazo/travisdockertest
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push szazo/travisdockertest
