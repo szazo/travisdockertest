@@ -1,3 +1,10 @@
-language: js
+sudo: required
+
+services:
+  - docker
+
+language: node_js
+
 script:
-  - echo 'hello'
+  - echo 'hello with docker'
+  - docker info
